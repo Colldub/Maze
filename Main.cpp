@@ -16,7 +16,6 @@ char** visited;
 int numRows, numCols;
 bool loaded;
 Queue q;
-int test;
 
 void storeMaze(int);
 void DeleteMaze();
@@ -28,7 +27,6 @@ void PrintVisited();
 void DeleteVisited();
 
 int main(){
-    test = 0;
     int currentR;
     int currentC;
     int newR;
