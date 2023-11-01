@@ -23,7 +23,6 @@ void Queue::enqueue(double d){
     n->data = d;
 
     if(head == NULL){
-        cout << "first enqueue: " << d << endl;
         head = n;
     }else{
 
@@ -33,7 +32,6 @@ void Queue::enqueue(double d){
             tmp = tmp->next;
         }
         tmp->next = n;
-        cout << "second enqueue: " << d << endl;
     }
 }
 
