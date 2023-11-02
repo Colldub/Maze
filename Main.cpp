@@ -15,6 +15,8 @@ char** maze;
 char** visited;
 int numRows, numCols;
 bool loaded;
+int goalR;//
+int goalC;//
 Queue q;
 
 void storeMaze(int);
@@ -31,6 +33,8 @@ int main(){
     int currentC;
     int newR;
     int newC;
+    goalR = 0;
+    goalC = 0;
     exits = false;
     int userChoice = 0;
     loaded = false;
@@ -43,6 +47,8 @@ int main(){
         cin >> userChoice;
         //choses maze and store in 2d array
         storeMaze(userChoice);
+
+        if(exits == true){break;}
 
         createVisit();
 
@@ -75,10 +81,6 @@ int main(){
             newC = q.dequeue();
             currentR = newR;
             currentC = newC;
-            ///////
-            //test ++;
-            //if(test == 5000){PrintVisited(); break;}
-            
         }
         PrintVisited();
         DeleteMaze();
