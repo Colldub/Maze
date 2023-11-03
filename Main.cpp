@@ -15,8 +15,6 @@ char** maze;
 char** visited;
 int numRows, numCols;
 bool loaded;
-int goalR;//
-int goalC;//
 Queue q;
 
 void storeMaze(int);
@@ -33,8 +31,6 @@ int main(){
     int currentC;
     int newR;
     int newC;
-    goalR = 0;
-    goalC = 0;
     exits = false;
     int userChoice = 0;
     loaded = false;
@@ -83,6 +79,8 @@ int main(){
             currentC = newC;
         }
         PrintVisited();
+        
+        // Get ready for the next maze to run
         DeleteMaze();
         DeleteVisited();
     
@@ -94,6 +92,7 @@ int main(){
     return 0;
 }
 
+// Takes current location and pushes all neighbooring lacations if not visited into queue
 void addNeighboors(int curR, int curC){
     int newCurR;
     int newCurC;
@@ -124,6 +123,7 @@ void addNeighboors(int curR, int curC){
     }
 }
 
+//create a same size 2d array to store visited locations
 void createVisit(){
 
     visited = new char*[numRows];
@@ -138,6 +138,7 @@ void createVisit(){
     }
 }
 
+// Takes current location and returns true if it is next to 'G'
 bool nextToExit(int curR, int curC){
     char nCell, eCell, sCell, wCell;
 
@@ -162,6 +163,7 @@ bool nextToExit(int curR, int curC){
     }
 }
 
+// Takes a user input and assigns the appropriate maze to the array
 void storeMaze(int selection){
     // Open the file for reading
 
@@ -173,7 +175,7 @@ void storeMaze(int selection){
         inputFile.open("maze2.txt");
     } else if (selection == 3) {
         inputFile.open("maze3.txt");
-    } else if(selection == 0){
+    } else if(selection == 0){ // If user enters 0 returns and exits
         exits = true;
         return;
     }else{
@@ -209,6 +211,7 @@ void storeMaze(int selection){
 
 }
 
+// Prints out current stored maze
 void PrintMaze(){
     // Print the maze
     if (loaded == false)
@@ -224,6 +227,7 @@ void PrintMaze(){
     }
 }
 
+// Prints out the current visited map
 void PrintVisited(){
     // Print the visited maze
     
@@ -235,6 +239,7 @@ void PrintVisited(){
     }
 }
 
+// Deletes the current maze array
 void DeleteMaze(){
     // Dealocate Memory
     if (loaded == false)
@@ -249,6 +254,7 @@ void DeleteMaze(){
     loaded = false;
 }
 
+//Deletes the current visited map
 void DeleteVisited(){
     // Dealocate Memory
 

@@ -16,6 +16,7 @@ Queue::~Queue(){
 
 }
 
+// Takes a double and puts it at the end of the queue
 void Queue::enqueue(double d){
     
     Node* n = new Node;
@@ -35,18 +36,21 @@ void Queue::enqueue(double d){
     }
 }
 
+// "pops" the front of the queue and deletes it
 double Queue::dequeue(){
-    double ret = 0;
-
     if(head == NULL){
-        ret = 0;
-    }else{
-        ret = head->data;
-        head = head->next;
+        return 0;
     }
+
+    double ret = head->data;
+    Node* temp = head; // Store the pointer to the node being removed
+    head = head->next;
+    delete temp; // Deallocate memory for the removed node
+
     return ret;
 }
 
+// Returns the current front head
 double Queue::peek(){
     double ret = 0;
     if(head != NULL){
@@ -55,6 +59,7 @@ double Queue::peek(){
     return ret;
 }
 
+// Prints out the Queue
 void Queue::print(){
     Node* tmp = head;
     while(tmp != NULL){
@@ -63,6 +68,7 @@ void Queue::print(){
     }
 }
 
+// Deletes the entire Queue
 void Queue::Delete(){
     while(head != NULL){
         Node* tmp = new Node;
