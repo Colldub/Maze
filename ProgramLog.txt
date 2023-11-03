@@ -5,4 +5,35 @@
     Collin Worth 10-24-2023
 */
 
+10/25
+    building queue 
+        problems
+            -non super easy just took a stack and modified push and pop
+
+10/29
+    implemented "storeMaze" and "nextToExit"
+        problems
+            - did not build a next to exit that can know which cell is
+                the goal just that there is one near.
+            - didnt have time to change you still get a very similar output
+    
+10/30
+    created a visited array to track where the program has gone in the maze
+
+    implementad "addNeighboors" function
+
+    fixed issues with delete functions not dealocating memory properly
+    it runs and solves 1 and 2!!!
+
+10/31
+    unfortunatly becuase im not starting at S but instead (0,0) it works
+    for 1 and 2 but not maze three.
+
+    put a simple for loop in the main program to find the start.
+
+11/1
+    forgot i had tampered with maze 3 and was trying to solve an 
+    unbeatable maze (facepalm)
+
+Finished
 

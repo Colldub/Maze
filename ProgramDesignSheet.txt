@@ -4,3 +4,54 @@
 
     Collin Worth 10-24-2023
 */
+
+main elements
+
+queue
+2d array * 2
+mazes stored in sepereate files
+an output of where the program has travled
+
+int main(){
+    // Main function of the program.
+
+    //
+}
+
+void addNeighboors(int curR, int curC){
+    //takes in the current location of the the program and pushes all
+        unvisited (N,E,S,W) cells that touch the current
+}
+
+void createVisit(){
+    // creates a 2d array just like the first one and fills it with 0s
+    // this is used to mark the visited locations of the program
+}
+
+bool nextToExit(int curR, int curC){
+    // takes in the current location of the program and returns true if
+        it is one block away from the 'G' in any direction
+}
+
+void storeMaze(int selection){
+    // Takes in a users selection (1,2,3,0) and stores the appropriate 
+        maze into a 2d array.
+    // if the selection is 0 it sets exits = true; and returns
+}
+
+void PrintMaze(){
+    // cout the contents of the maze.
+}
+
+void PrintVisited(){
+    // cout the contents of the visited map at its current stage
+}
+
+void DeleteMaze(){
+    // Dealocates memory of the maze so that a new one can be loaded
+}
+
+void DeleteVisited(){
+    // Dealocates all memory for the visited map
+}
+
